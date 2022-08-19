@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Controller
 public class Test {
+	DriverManagerDataSource c;
+	JdbcTemplate template;
 	@RequestMapping("/quanghuy")
 	public String display(HttpServletRequest req, Model model) {
 		String file = req.getParameter("file");
